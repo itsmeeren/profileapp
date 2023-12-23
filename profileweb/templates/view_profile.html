@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+    <!-- Add any additional head content here -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Profile</h1>
+    </header>
+
+    {% if user_profile.user == request.user %}
+        <section>
+            <h2>User Information</h2>
+            <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+            <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+            <!-- Add any other user information you want to display -->
+
+            {% if user_profile.bio %}
+                <h2>Profile Information</h2>
+                <p><strong>Bio:</strong> {{ user_profile.bio }}</p>
+                <!-- Add any other profile information you want to display -->
+
+                {% if user_profile.profile_picture %}
+                    <p>Profile Picture:</p>
+                    <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+                {% endif %}
+            {% endif %}
+        </section>
+
+        <footer>
+            <a href="{% url 'edit_profile' %}">Edit Profile</a>
+            <!-- 'edit_profile' should be replaced with the actual URL pattern name for your edit_profile view -->
+        </footer>
+    {% else %}
+        <p>You are not authorized to view this profile.</p>
+    {% endif %}
+</body>
+</html>

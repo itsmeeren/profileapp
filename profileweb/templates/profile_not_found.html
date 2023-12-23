@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Not Found</title>
+    <!-- Add any additional head content here -->
+</head>
+<body>
+    <header>
+        <h1>Profile Not Found</h1>
+    </header>
+
+    <section>
+        <p>The profile you are looking for does not exist.</p>
+        <p>Please make sure you have entered the correct username or contact support for assistance.</p>
+        <!-- You can provide additional instructions or links here -->
+    </section>
+
+    <footer>
+        <a href="{% url 'view_profile' %}">Back to Home</a>
+        <!-- 'home' should be replaced with the actual URL pattern name for your home view -->
+    </footer>
+</body>
+</html>

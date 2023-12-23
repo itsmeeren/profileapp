@@ -1,0 +1,8 @@
+next i have to create pages for creating an account and also should
+add an option to user to change username and password for their account
+
+
+
+-> next i should study the models and forms which i have created for the password auth system
+
+
