@@ -4,5 +4,11 @@ add an option to user to change username and password for their account
 
 
 -> next i should study the models and forms which i have created for the password auth system
+-> next add the scalability for the user to create the account in the same page if they dont have the
+account
+-> and use the data serializers for the app to convert the data into the json format
+to check the vulnerabilities of my website using burpsuite
+
+
 
 
