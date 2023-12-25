@@ -9,6 +9,8 @@ from .models import UserProfile
 from .models import UserProfile  # Import UserProfile model
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UserRegistrationForm
 from .models import UserProfile
 # Create your views here.
 
@@ -84,3 +86,18 @@ def edit_profile(request):
         form = UserProfileForm(instance=user_profile)
 
     return render(request, 'edit_profile.html', {'form': form})
+
+def registration_view(request):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect to a success page or home page
+            return redirect('homepage')  # Replace 'home' with your actual home URL
+        else:
+            print(form.errors)
+
+    else:
+        form = UserRegistrationForm()
+
+    return render(request, 'create_account.html', {'form': form})
