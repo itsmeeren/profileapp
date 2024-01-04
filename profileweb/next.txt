@@ -10,5 +10,11 @@ account
 to check the vulnerabilities of my website using burpsuite
 
 
+-> next i have to create an instance which will just accept the user and just add it ot the data base and
+should convert that model into the json data which have to  be accessible only for the admin thorugh login
+
+something
+
+
 
 
