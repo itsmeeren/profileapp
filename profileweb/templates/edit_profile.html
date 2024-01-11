@@ -23,6 +23,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            color: #333;  /* Set text color for form elements */
         }
 
         label {
@@ -41,7 +42,7 @@
         }
 
         button {
-            background-color: #4caf50;
+            background-color: #4285f4;
             color: #fff;
             padding: 10px;
             border: none;
@@ -50,14 +51,18 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #2a5f8d;
         }
     </style>
 </head>
 <body>
     <form method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.username.label_tag }} {{ form.username }}
+        {{ form.email.label_tag }} {{ form.email }}
+        {{ form.password.label_tag }} {{ form.password }}
+        {{ form.password1.label_tag }} {{ form.password1 }}
+        {{ form.password2.label_tag }} {{ form.password2 }}
         <button type="submit">Save Changes</button>
     </form>
 </body>
