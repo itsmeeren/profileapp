@@ -16,5 +16,7 @@ should convert that model into the json data which have to  be accessible only f
 something
 
 
-fuck you guys
+# use byte io module to convert the parse data into the python native datatype and
+# after use byte stream to convert it into the sql database
+
 
