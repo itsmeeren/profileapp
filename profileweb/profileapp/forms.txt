@@ -12,9 +12,17 @@ class UserProfile(models.Model):
         model=UserProfile
         fields=[here mention the required field from the models ]
 
-while using the form
+while using the form and for validating the data i have to use use under if
 
 def create_userprofile():
-    forms=forms.CreateProfile()
+    if request.method=="POST":
+        form=forms.CreateProfile(request.POST,request.FILES)# this part does the validation job
+        if forms.is_valid():
+            form.save() # this part is for saving the form if it is valid to the database
+
+    else:
+        forms=forms.CreateProfile()# this part again renders the create form page
     return render(request,"htmlfile",{"form":forms})# ,mention the instace you ve used above
+
+-> if the form in case contains the files to be uploaded you need to add request.FILES
 
