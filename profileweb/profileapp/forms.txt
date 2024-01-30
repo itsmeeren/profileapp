@@ -10,9 +10,9 @@ class UserProfile(models.Model):
 
     class CreateProfile():
         model=UserProfile
-        fields=[here mention the required field from the models ]
+        fields=[here mention the required field from the models ] # i can add __all__ if i need all fields
 
-while using the form and for validating the data i have to use use under if
+while using the form and for validating the data i have to use under if
 
 def create_userprofile():
     if request.method=="POST":
@@ -22,7 +22,7 @@ def create_userprofile():
 
     else:
         forms=forms.CreateProfile()# this part again renders the create form page
-    return render(request,"htmlfile",{"form":forms})# ,mention the instace you ve used above
+    return render(request,"htmlfile",{"form":forms})# ,mention the instance you ve used above
 
 -> if the form in case contains the files to be uploaded you need to add request.FILES
 
