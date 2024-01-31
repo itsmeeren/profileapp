@@ -12,6 +12,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 from .models import UserProfile
+
 # Create your views here.
 
 
@@ -23,6 +24,7 @@ def otprequest(request):
     return render(request,"otprequest.html")
 def create_account(request):
     return render(request,"create_account.html")
+
 
 
 # views.py
@@ -143,3 +145,16 @@ def edit_profile(request):
 #         form = UserRegistrationForm()
 #
 #     return render(request, 'create_account.html', {'form': form})
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+
+
+@api_view(["GET",'POST'])
+def api_account(request):
+    if request.data:
+        recieved=request.data
+        return Response({"message":"hi",'data':recieved})
+    else:
+        return Response({"data":"NO data"})
+
